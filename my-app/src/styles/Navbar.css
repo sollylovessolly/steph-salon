@@ -1,0 +1,120 @@
+.nav-container {
+    background-color: #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    background: url("../assets/logo.png") no-repeat center;
+    background-size: cover;
+    width: 80px;
+    height: 60px;
+}
+
+/* Default Nav Items */
+.nav-items ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    margin-left: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-items li:hover {
+    color: pink;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 10px 30px;
+    }
+
+    .nav-items ul {
+        gap: 2rem;
+    }
+
+    .nav-items li {
+        margin-left: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-items {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #3a3a3a;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-items.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-items li {
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 50px;
+    }
+}

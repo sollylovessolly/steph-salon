@@ -1,0 +1,45 @@
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 2px solid #5a3e36;
+    box-shadow: 12px 20px 20px rgba(0, 0, 0, 0.701) ;
+    background-color: black;
+    
+}
+.logo-container{
+    width: 50%;
+    padding: 20px;
+}
+.footer-container .logo{
+    background: url("../assets/logo.png")no-repeat ;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    background-color: #F2d8d8;
+    border-radius: 50%;
+}
+.contacts-container{
+    width: 50%;
+}
+
+.contacts li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.contacts li a{
+    text-decoration: none;
+    color: #F2d8d8;
+    font-size: 1.2rem;
+}
+#contact{
+    padding: 20px;
+}
+
+.location{
+    color: #F2d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}

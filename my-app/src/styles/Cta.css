@@ -1,0 +1,89 @@
+.cta-container {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #F2d8d8;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-image {
+    border: 2px solid #5a3e36;
+    background: url("../assets/cta.jpg") no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    width: 40%;
+    padding: 20%;
+
+    opacity: 0;
+    animation: scaleIn 1.2s ease-out forwards;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cta-text {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-text button {
+    width: 120px;
+    height: 40px;
+    border: 2px solid #5a3e36;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5a3e36;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.cta-text button:hover {
+    background-color: #5a3e36;
+    color: #F2d8d8;
+    font-size: 1.2rem;
+    transform: scale(1.05);
+}
