@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/InspoComponent.css';
 
 import wash from '../assets/wash.jpeg';
@@ -16,25 +16,42 @@ import passion from '../assets/passion.jpeg';
 import bohemian from '../assets/boheimian.jpeg';
 import bantu from '../assets/bantu.jpeg';
 import micro from '../assets/micro.jpeg';
-import inspo1 from '../assets/inspo1.jpg';
-import inspo2 from '../assets/inspo2.jpg';
-import inspo3 from '../assets/inspo3.jpg';
-import inspo4 from '../assets/inspo4.jpg';
-import inspo5 from '../assets/inspo5.jpg';
-import inspo6 from '../assets/inspo6.jpeg';
-import inspo7 from '../assets/inspo7.jpg';
-import inspo8 from '../assets/inspo8.jpg';
-import inspo9 from '../assets/inspo9.jpg';
-import inspo10 from '../assets/inspo10.jpg';
-import inspo11 from '../assets/inspo11.jpg';
-import inspo12 from '../assets/inspo12.jpg';
 
 const inspoImages = [
-    wash, braids, inspo1, twists, corn, inspo2, ghana, curls, wig, inspo3, locs, butterfly, inspo4, fulani,
-    knotless, passion, inspo5, bohemian, bantu, micro, inspo6, inspo7, inspo8, inspo9, inspo10, inspo11, inspo12
+  { src: wash, name: "wash.jpeg" },
+  { src: braids, name: "braids.jpeg" },
+  { src: twists, name: "twists.jpeg" },
+  { src: corn, name: "corn.jpg" },
+  { src: ghana, name: "ghana.jpeg" },
+  { src: curls, name: "curls.jpeg" },
+  { src: wig, name: "wig.jpeg" },
+  { src: locs, name: "locs.jpeg" },
+  { src: butterfly, name: "butterfly.jpeg" },
+  { src: fulani, name: "fulani.jpeg" },
+  { src: knotless, name: "knotless.jpeg" },
+  { src: passion, name: "passion.jpeg" },
+  { src: bohemian, name: "bohemian.jpeg" },
+  { src: bantu, name: "bantu.jpeg" },
+  { src: micro, name: "micro.jpeg" }
 ];
 
 const InspoComponent = () => {
+  useEffect(() => {
+    const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let bg = entry.target;
+          bg.style.backgroundImage = `url('${bg.dataset.bg}')`;
+          observer.unobserve(bg);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(bg => observer.observe(bg));
+  }, []);
+
   return (
     <div className="inspo-container">
       <div className="inspo-title">
@@ -42,13 +59,13 @@ const InspoComponent = () => {
       </div>
       <div className="inspo-grid">
         {inspoImages.map((image, index) => (
-          <div key={index} className="inspo-card auto-show">
-            <div className="inspo-image" style={{ backgroundImage: `url(${image})` }}></div>
-          </div>
+          <a key={index} href={image.src} download={image.name} className="inspo-card-link">
+            <div className="inspo-card lazy-bg" data-bg={image.src}></div>
+          </a>
         ))}
       </div>
       <div className="disclaimer">
-        <p>*Found something you love? Save it and show your stylist!* 💕</p>
+        <p>*Found something you love? Click to download and show your stylist!* 💕</p>
       </div>
     </div>
   );

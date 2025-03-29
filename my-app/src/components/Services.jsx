@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Services.css';
+import { Link } from "react-router-dom";
 
 // Import images
 import wash from '../assets/wash.jpeg';
@@ -17,23 +18,25 @@ import passion from '../assets/passion.jpeg';
 import bohemian from '../assets/boheimian.jpeg';
 import bantu from '../assets/bantu.jpeg';
 import micro from '../assets/micro.jpeg';
+import ponytail from "../assets/ponytail.jpeg"
 
 const services = [
-    { name: 'Washing & Styling', price: '₦5,000', image: wash },
-    { name: 'Braids', price: '₦15,000', image: braids },
-    { name: 'Twists', price: '₦12,000', image: twists },
-    { name: 'Corn Rows', price: '₦8,000', image: corn },
-    { name: 'Ghana Weaving', price: '₦10,000', image: ghana },
-    { name: 'Finger Curls', price: '₦7,000', image: curls },
-    { name: 'Wig Revamp', price: '₦6,000', image: wig },
-    { name: 'Locs Maintenance', price: '₦9,000', image: locs },
-    { name: 'Butterfly Locs', price: '₦18,000', image: butterfly },
-    { name: 'Fulani Braids', price: '₦20,000', image: fulani },
-    { name: 'Knotless Braids', price: '₦22,000', image: knotless },
-    { name: 'Passion Twists', price: '₦15,000', image: passion },
-    { name: 'Bohemian Braids', price: '₦18,000', image: bohemian },
-    { name: 'Bantu Knots', price: '₦10,000', image: bantu },
-    { name: 'Micro Braids', price: '₦25,000', image: micro },
+    { name: 'washing', price: '₦1,000', image: wash },
+    { name: 'Braids', price: '₦6,000', image: braids },
+    { name: 'Twists', price: '₦3,000', image: twists },
+    { name: 'Corn Rows', price: '₦1,500 - ₦2,000', image: corn },
+    { name: 'Ghana Weaving', price: '₦6,000', image: ghana },
+    { name: 'Finger Curls', price: '₦3,000', image: curls },
+    { name: 'Wig Revamp', price: '₦4,000', image: wig },
+    { name: 'Locs Maintenance', price: '₦3,000', image: locs },
+    { name: 'Butterfly Locs', price: '₦8,000', image: butterfly },
+    { name: 'Fulani Braids', price: '₦6,000', image: fulani },
+    { name: 'Knotless Box Braids', price: '₦7,000', image: knotless },
+    { name: 'Passion Twists', price: '₦6,000', image: passion },
+    { name: 'Goddess Braids', price: '₦8,000', image: bohemian },
+    { name: 'Bantu Knots', price: '₦3,000', image: bantu },
+    { name: 'Micro Braids', price: '₦9,000', image: micro },
+    { name: 'ponytail', price: '₦5,000', image: ponytail },
 ];
 
 const Services = () => {
@@ -52,7 +55,8 @@ const Services = () => {
         ))}
       </div>
       <div className="disclaimer">
-        <p>*Not seeing what you want? You can always show your stylist a reference picture.*</p>
+        <p>*you can check out our telegram channels for more information on the styles and other prices 💗💗*</p>
+        <button><a href="https://t.me/+wD4vp819FJM5YzNk" target="_blank" rel="noopener noreferrer">check it out</a></button>
       </div>
     </div>
   );

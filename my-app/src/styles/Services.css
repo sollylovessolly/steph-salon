@@ -55,6 +55,30 @@
     color: #5a3e36;
     font-weight: bold;
 }
+.disclaimer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.disclaimer button{
+    padding: 10px;
+    background-color: #F2d8d8;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+}
+.disclaimer a{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 1.2rem;
+}
+.disclaimer button:hover{
+    background-color: #5a3e36;
+    color: #F2d8d8;
+}
+.disclaimer button a:hover{
+    color: #F2d8d8;
+}
 
 @keyframes autoshowAnimation {
     from {

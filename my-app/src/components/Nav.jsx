@@ -19,7 +19,7 @@ const Nav = () => {
           <Link to="/ServicesPage" onClick={() => setMenuOpen(false)}><li>Services</li></Link>
           <Link to="/inspo" onClick={() => setMenuOpen(false)}><li>Inspo</li></Link>
           <Link to="/products" onClick={() => setMenuOpen(false)}><li>Products</li></Link>
-          <a href="https://t.me/your_channel_or_username" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}><li>Book Now</li></a>
+          <a href="https://t.me/precious_stephen" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}><li>Book Now</li></a>
         </ul>
       </div>
     </div>

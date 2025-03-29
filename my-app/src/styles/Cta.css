@@ -1,5 +1,5 @@
 .cta-container {
-    padding: 50px;
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -9,25 +9,15 @@
     animation-timeline: view(70% 5%);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* CTA Image */
 .cta-image {
     border: 2px solid #5a3e36;
     background: url("../assets/cta.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
     border-radius: 10px;
     width: 40%;
     padding: 20%;
-
     opacity: 0;
     animation: scaleIn 1.2s ease-out forwards;
     animation-timeline: view(70% 5%);
@@ -44,6 +34,7 @@
     }
 }
 
+/* CTA Text */
 .cta-text {
     font-size: 2rem;
     text-align: center;
@@ -58,17 +49,7 @@
     animation-timeline: view(70% 5%);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* CTA Button */
 .cta-text button {
     width: 120px;
     height: 40px;
@@ -86,4 +67,53 @@
     color: #F2d8d8;
     font-size: 1.2rem;
     transform: scale(1.05);
+}
+
+/* ✅ RESPONSIVE FOR iPod SCREENS */
+@media (max-width: 768px) {
+    .cta-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .cta-image {
+        width: 80%;
+        padding: 40%;
+    }
+
+    .cta-text {
+        width: 90%;
+        font-size: 1.5rem;
+        padding: 10%;
+    }
+
+    .cta-text button {
+        width: 100px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ✅ FOR VERY SMALL SCREENS (iPhone SE, iPod Touch) */
+@media (max-width: 480px) {
+    .cta-container {
+        padding: 20px;
+    }
+
+    .cta-image {
+        width: 90%;
+        padding: 50%;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+        padding: 5%;
+    }
+
+    .cta-text button {
+        width: 90px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
 }

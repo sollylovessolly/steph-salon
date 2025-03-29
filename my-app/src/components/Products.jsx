@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Products.css';
 
 // Import product images
@@ -17,6 +17,22 @@ const products = [
 ];
 
 const Products = () => {
+  useEffect(() => {
+    const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let bg = entry.target;
+          bg.style.backgroundImage = `url('${bg.dataset.bg}')`;
+          observer.unobserve(bg);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(bg => observer.observe(bg));
+  }, []);
+
   return (
     <div className="products-container">
       <div className="products-title">
@@ -24,10 +40,10 @@ const Products = () => {
       </div>
       <div className="products-grid">
         {products.map((product, index) => (
-          <div key={index} className="product-item" style={{ backgroundImage: `url(${product.image})` }}></div>
+          <div key={index} className="product-item lazy-bg" data-bg={product.image}></div>
         ))}
       </div>
-      <a href="https://t.me/your_channel_or_username" target="_blank" rel="noopener noreferrer">
+      <a href="https://t.me/precious_stephen" target="_blank" rel="noopener noreferrer">
         <button className="cta-button">Order Now</button>
       </a>
     </div>
