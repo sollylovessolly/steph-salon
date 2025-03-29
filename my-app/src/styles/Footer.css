@@ -38,6 +38,7 @@
 }
 
 .location{
+    padding-top: 20px
     color: #F2d8d8;
     display: flex;
     justify-content: center;
